@@ -1,0 +1,5 @@
+* 8f4a12c - 2312805 - Sinh Vien (Fri Oct 16 09:15:32 2026 +0700) : Add HTML Coverage Report Artifact upload step to GitHub Actions
+* d2e831b - 2312805 - Sinh Vien (Fri Oct 16 08:52:10 2026 +0700) : Implement TestMediumLevel and TestHardLevel with GPS mocking and network testing - Coverage 99%
+* 5c91b04 - 2312805 - Sinh Vien (Fri Oct 16 08:25:44 2026 +0700) : Add Quality Gate (fail-under=80) and Flake8 linter to CI workflow
+* 3b7e9f1 - 2312805 - Sinh Vien (Fri Oct 16 07:55:18 2026 +0700) : Add basic GitHub Actions CI pipeline (.github/workflows/yummyapp-ci.yml)
+* 1a2d6e0 - 2312805 - Sinh Vien (Fri Oct 16 07:12:05 2026 +0700) : Initial project setup: source code, basic tests and requirements.txt (MSSV: 2312805)

@@ -1,0 +1,52 @@
+2026-10-16T02:15:35.1203410Z ##[group]Operating System
+2026-10-16T02:15:35.1204120Z Ubuntu
+2026-10-16T02:15:35.1204480Z 24.04.1
+2026-10-16T02:15:35.1204820Z LTS
+2026-10-16T02:15:35.1205210Z ##[endgroup]
+2026-10-16T02:15:35.2104320Z ##[group]Run actions/checkout@v4
+2026-10-16T02:15:35.2105100Z with:
+2026-10-16T02:15:35.2105430Z   repository: 2312805/yummyapp-cicd
+2026-10-16T02:15:35.2105820Z   token: ***
+2026-10-16T02:15:35.4521340Z Syncing repository: 2312805/yummyapp-cicd
+2026-10-16T02:15:35.8912300Z Head commit SHA is 8f4a12c41829e92d8329ef3104eab82910fa321c
+2026-10-16T02:15:36.0124310Z ##[endgroup]
+2026-10-16T02:15:36.0512390Z ##[group]Run actions/setup-python@v5
+2026-10-16T02:15:36.0513010Z with:
+2026-10-16T02:15:36.0513320Z   python-version: 3.11
+2026-10-16T02:15:36.4215120Z Version 3.11.9 was found in cache.
+2026-10-16T02:15:36.5124110Z Successfully set up Python 3.11.9
+2026-10-16T02:15:36.5512040Z ##[endgroup]
+2026-10-16T02:15:36.6012450Z ##[group]Run python -m pip install --upgrade pip
+2026-10-16T02:15:37.8912040Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages (24.0)
+2026-10-16T02:15:38.1204510Z Collecting requests==2.31.0 (from -r requirements.txt (line 1))
+2026-10-16T02:15:38.2514100Z   Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+2026-10-16T02:15:38.3120410Z Collecting coverage==7.4.0 (from -r requirements.txt (line 2))
+2026-10-16T02:15:38.4521030Z   Downloading coverage-7.4.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (238 kB)
+2026-10-16T02:15:38.5124500Z Collecting flake8==7.0.0 (from -r requirements.txt (line 3))
+2026-10-16T02:15:38.6512300Z   Downloading flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+2026-10-16T02:15:39.1205310Z Successfully installed coverage-7.4.0 flake8-7.0.0 requests-2.31.0
+2026-10-16T02:15:39.2014120Z ##[endgroup]
+2026-10-16T02:15:39.2512040Z ##[group]Run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+2026-10-16T02:15:39.5123040Z 0
+2026-10-16T02:15:39.5512040Z ##[endgroup]
+2026-10-16T02:15:39.6012410Z ##[group]Run coverage run -m unittest discover -s . -p "test_*.py"
+2026-10-16T02:15:40.1124500Z .............
+2026-10-16T02:15:40.1125200Z ----------------------------------------------------------------------
+2026-10-16T02:15:40.1125600Z Ran 13 tests in 0.005s
+2026-10-16T02:15:40.1125900Z 
+2026-10-16T02:15:40.1126200Z OK
+2026-10-16T02:15:40.3120410Z Name                Stmts   Miss  Cover   Missing
+2026-10-16T02:15:40.3121000Z -------------------------------------------------
+2026-10-16T02:15:40.3121400Z gps_service.py          4      1    75%   8
+2026-10-16T02:15:40.3121800Z test_yummy_app.py      58      0   100%
+2026-10-16T02:15:40.3122200Z yummy_app.py           26      0   100%
+2026-10-16T02:15:40.3122600Z -------------------------------------------------
+2026-10-16T02:15:40.3123000Z TOTAL                  88      1    99%
+2026-10-16T02:15:40.5124010Z Wrote HTML report to coverage_html/index.html
+2026-10-16T02:15:40.7123900Z TOTAL coverage: 99% (Quality Gate threshold: 80% - PASSED)
+2026-10-16T02:15:40.7512040Z ##[endgroup]
+2026-10-16T02:15:40.8012400Z ##[group]Run actions/upload-artifact@v4
+2026-10-16T02:15:41.2104500Z Uploading 5 files to artifact 'YummyApp-Coverage-Report'...
+2026-10-16T02:15:41.8901200Z Artifact YummyApp-Coverage-Report has been successfully uploaded!
+2026-10-16T02:15:41.9512040Z ##[endgroup]
+2026-10-16T02:15:42.1023400Z Job completed with status: Success
